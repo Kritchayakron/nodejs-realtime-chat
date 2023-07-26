@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Real time Chat App</title>
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h3>Chat</h3>
+      </div>
+
+      <div class="card">
+        <div class="card-header">Please put your name before chat</div>
+        <div id="box-name" class="card-body">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="username"
+              placeholder="Please enter your name"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-info" type="button" id="saveUsername">
+                Save
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="message-box">
+          <ul class="list-group list-group-flush" id="message-list"></ul>
+          <div class="info"></div>
+        </div>
+
+        <div id="box-sent-mg" class="" style="display: none;">
+          <div class="input-group">
+            <input
+              type="text"
+              class="form-control"
+              id="message"
+              placeholder="Send message"
+            />
+            <div class="input-group-append">
+              <button class="btn btn-success" type="button" id="messageBtn">
+                Send
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.0/socket.io.js"></script>
+    <script src="/js/chat.js"></script>
+  </body>
+  <style>
+    div#box-sent-mg {
+      position: fixed;
+      bottom: 0;
+      max-width: 1140px;
+      width: 90%;
+    }
+    .info {
+      padding: 0.75rem 1.25rem;
+    }
+  </style>
+</html>
